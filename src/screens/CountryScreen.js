@@ -1,6 +1,6 @@
 import React,{ Component } from "react";
 import { View,Text,ScrollView,TouchableOpacity,Alert ,BackHandler,TextInput} from "react-native";
-import {Actions} from 'react-native-router-flux';
+// import {Actions} from 'react-native-router-flux';
 import { Card } from "native-base";
 import NetInfo from '@react-native-community/netinfo';
 import CountryList from "../components/list/CountryList";
@@ -13,7 +13,7 @@ constructor(props){
         this.state = {
             dataSource:[],
             slug:'',
-            isLoading:false,
+            isLoading:true,
             enteredDta:'',
             text:''
         }
@@ -54,7 +54,8 @@ componentWillUnmount() {
     }
 
  handleBackButtonClick=()=> {
-     Actions.HomeScreen()
+    //  Actions.HomeScreen()
+     this.props.navigation.navigate('HomeScreen')
      return true
  }
 
@@ -63,7 +64,8 @@ componentWillUnmount() {
   this.setState({
     slug:val
   },function(){
-      Actions.CountryDetailScreen({selectedItemValue:this.state.slug})
+    //   Actions.CountryDetailScreen({selectedItemValue:this.state.slug})
+    this.props.navigation.navigate('CountryDetailScreen',{selectedItemValue:this.state.slug})
   })
   
  }

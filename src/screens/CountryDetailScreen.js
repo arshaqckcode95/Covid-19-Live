@@ -35,13 +35,14 @@ export default class CountryDetailScreen extends Component{
 
   handleBackButtonClick=()=> {
 
-    Actions.pop()
+    // Actions.pop()
+    this.props.navigation.goBack()
       return true
     };
 
    
     render(){
-     console.log('selected item details',this.props.selectedItemValue)
+     console.log('selected item details',this.props.route.params.selectedItemValue)
      if(this.state.isLoading){
         return (<Loading/>);
      }else {
@@ -63,7 +64,7 @@ export default class CountryDetailScreen extends Component{
                         </View>
                     </View> 
                     <View style={{alignItems:'center',justifyContent:'center',marginTop:10}}>
-                       <Text style={{color:'white',fontWeight:'bold',fontSize:22}} >{this.props.selectedItemValue.Country}</Text>
+                       <Text style={{color:'white',fontWeight:'bold',fontSize:22}} >{this.props.route.params.selectedItemValue.Country}</Text>
                     </View>
           
         </View>
@@ -77,7 +78,7 @@ export default class CountryDetailScreen extends Component{
                          </View>
                         <View style={{width:'70%'}}>
                             <Text  style={{fontSize:18,fontWeight:'bold'}}>New Confirmed Cases</Text>
-                            <Text style={{fontSize:18,marginTop:7}}>{this.props.selectedItemValue.NewConfirmed}</Text>
+                            <Text style={{fontSize:18,marginTop:7}}>{this.props.route.params.selectedItemValue.NewConfirmed}</Text>
                         </View>
                   </View> 
 
@@ -87,7 +88,7 @@ export default class CountryDetailScreen extends Component{
                          </View>
                         <View style={{width:'70%'}}>
                             <Text  style={{fontSize:18,fontWeight:'bold'}}>New Deaths</Text>
-                            <Text style={{fontSize:18,marginTop:7}}>{this.props.selectedItemValue.NewDeaths}</Text>
+                            <Text style={{fontSize:18,marginTop:7}}>{this.props.route.params.selectedItemValue.NewDeaths}</Text>
                         </View>
                 </View> 
 
@@ -98,7 +99,7 @@ export default class CountryDetailScreen extends Component{
                          </View>
                         <View style={{width:'70%'}}>
                             <Text  style={{fontSize:18,fontWeight:'bold'}}>New Recovered</Text>
-                            <Text style={{fontSize:18,marginTop:7}}>{this.props.selectedItemValue.NewRecovered}</Text>
+                            <Text style={{fontSize:18,marginTop:7}}>{this.props.route.params.selectedItemValue.NewRecovered}</Text>
                         </View>
                 </View> 
 
@@ -110,7 +111,7 @@ export default class CountryDetailScreen extends Component{
                          </View>
                         <View style={{width:'70%'}}>
                             <Text  style={{fontSize:18,fontWeight:'bold'}}>Total Confirmed</Text>
-                            <Text style={{fontSize:18,marginTop:7}}>{this.props.selectedItemValue.TotalConfirmed}</Text>
+                            <Text style={{fontSize:18,marginTop:7}}>{this.props.route.params.selectedItemValue.TotalConfirmed}</Text>
                         </View>
                 </View> 
          <View style={{flexDirection:'row',marginLeft:10,marginTop:20,alignItems:'center',width:'100%'}}>
@@ -119,7 +120,7 @@ export default class CountryDetailScreen extends Component{
                          </View>
                         <View style={{width:'70%'}}>
                             <Text  style={{fontSize:18,fontWeight:'bold'}}>Total Deaths </Text>
-                            <Text style={{fontSize:18,marginTop:7}}>{this.props.selectedItemValue.TotalDeaths}</Text>
+                            <Text style={{fontSize:18,marginTop:7}}>{this.props.route.params.selectedItemValue.TotalDeaths}</Text>
                         </View>
                 </View> 
          
@@ -129,7 +130,7 @@ export default class CountryDetailScreen extends Component{
                          </View>
                         <View style={{width:'70%'}}>
                             <Text  style={{fontSize:18,fontWeight:'bold'}}>Total Recovered </Text>
-                            <Text style={{fontSize:18,marginTop:7}}>{this.props.selectedItemValue.TotalRecovered}</Text>
+                            <Text style={{fontSize:18,marginTop:7}}>{this.props.route.params.selectedItemValue.TotalRecovered}</Text>
                         </View>
                 </View> 
           </View>
