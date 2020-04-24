@@ -28,7 +28,7 @@ export default class SplashScreen extends Component{
 
         return(
 
-         <View style={{flex:1,alignItems:'center',justifyContent:'center'}}>
+         <View style={{flex:1,alignItems:'center',justifyContent:'center',backgroundColor:'white'}}>
          {/* <Card> */}
           <Image source={AppLogo} style={{width:90,height:80}}/>
          {/* </Card> */}

@@ -129,6 +129,33 @@ export default class HomeScreen extends Component{
       <View style={{borderTopEndRadius:30,borderTopLeftRadius:30,marginTop:-30,backgroundColor:'white'}}>
      
         <View style={{marginTop:30}}>
+          <View style={{flexDirection:'row',marginLeft:10,marginTop:20,alignItems:'center',width:'100%'}}>
+                        <View  style={{width:'30%',alignItems:'center'}}>
+                        <Icon name="user" size={35}   style={{ color:'orange'   }}/>
+                        </View>
+                        <View style={{width:'70%'}}>
+                            <Text  style={{fontSize:18,fontWeight:'bold'}}>New Confirmed</Text>
+                            <Text style={{fontSize:18,marginTop:8}}>{this.state.dataSource.NewConfirmed}</Text>
+                        </View>
+                </View>
+                    <View style={{flexDirection:'row',marginLeft:10,marginTop:20,alignItems:'center',width:'100%'}}>
+                        <View  style={{width:'30%',alignItems:'center'}}>
+                        <Icon name="user" size={35}   style={{ color:'red'   }}/>
+                        </View>
+                        <View style={{width:'70%'}}>
+                            <Text  style={{fontSize:18,fontWeight:'bold'}}>New Death</Text>
+                            <Text style={{fontSize:18,marginTop:8}}>{this.state.dataSource.NewDeaths}</Text>
+                        </View>
+                </View>
+                    <View style={{flexDirection:'row',marginLeft:10,marginTop:20,alignItems:'center',width:'100%'}}>
+                        <View  style={{width:'30%',alignItems:'center'}}>
+                        <Icon name="user" size={35}   style={{ color:'green'   }}/>
+                        </View>
+                        <View style={{width:'70%'}}>
+                            <Text  style={{fontSize:18,fontWeight:'bold'}}>New Recovered</Text>
+                            <Text style={{fontSize:18,marginTop:8}}>{this.state.dataSource.NewRecovered}</Text>
+                        </View>
+                </View>
                 <View style={{flexDirection:'row',marginLeft:10,marginTop:20,alignItems:'center',width:'100%'}}>
                         <View style={{width:'30%',alignItems:'center'}}>
                           <Icon name="user" size={35}   style={{ color:'orange'   }}/>
@@ -156,33 +183,7 @@ export default class HomeScreen extends Component{
                             <Text style={{fontSize:18,marginTop:8}}>{this.state.dataSource.TotalRecovered}</Text>
                         </View>
                 </View>
-                  <View style={{flexDirection:'row',marginLeft:10,marginTop:20,alignItems:'center',width:'100%'}}>
-                        <View  style={{width:'30%',alignItems:'center'}}>
-                        <Icon name="user" size={35}   style={{ color:'orange'   }}/>
-                        </View>
-                        <View style={{width:'70%'}}>
-                            <Text  style={{fontSize:18,fontWeight:'bold'}}>New Confirmed</Text>
-                            <Text style={{fontSize:18,marginTop:8}}>{this.state.dataSource.NewConfirmed}</Text>
-                        </View>
-                </View>
-                    <View style={{flexDirection:'row',marginLeft:10,marginTop:20,alignItems:'center',width:'100%'}}>
-                        <View  style={{width:'30%',alignItems:'center'}}>
-                        <Icon name="user" size={35}   style={{ color:'red'   }}/>
-                        </View>
-                        <View style={{width:'70%'}}>
-                            <Text  style={{fontSize:18,fontWeight:'bold'}}>New Death</Text>
-                            <Text style={{fontSize:18,marginTop:8}}>{this.state.dataSource.NewDeaths}</Text>
-                        </View>
-                </View>
-                    <View style={{flexDirection:'row',marginLeft:10,marginTop:20,alignItems:'center',width:'100%'}}>
-                        <View  style={{width:'30%',alignItems:'center'}}>
-                        <Icon name="user" size={35}   style={{ color:'green'   }}/>
-                        </View>
-                        <View style={{width:'70%'}}>
-                            <Text  style={{fontSize:18,fontWeight:'bold'}}>New Recovered</Text>
-                            <Text style={{fontSize:18,marginTop:8}}>{this.state.dataSource.NewRecovered}</Text>
-                        </View>
-                </View>
+                
            </View>
 
         </View>
