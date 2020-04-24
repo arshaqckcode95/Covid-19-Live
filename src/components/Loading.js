@@ -20,7 +20,7 @@ export default class Loading extends React.Component {
                 justifyContent: 'center',
                 alignContent: 'center',
                 alignItems: 'center',
-                // backgroundColor: 'white'
+                backgroundColor: 'white'
             }}>
            {/* <View style={{ justifyContent: 'center',
                 alignContent: 'center',

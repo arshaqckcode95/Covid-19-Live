@@ -50,27 +50,27 @@ export default class CountryDetailScreen extends Component{
      
         return(
 
-   <View style={{ flex: 1, width:'100%',}}>
-      
- <ScrollView showsVerticalScrollIndicator={false}>
+   <View style={{ flex: 1, width:'100%',backgroundColor:'white'}}>
+
 
         <View style={{backgroundColor:'#2E4053',width:'100%',height:200}}>
          <View style={{backgroundColor:'#2E4053',width:'20%',alignSelf:'flex-start',}}>
                        <View style={{margin:10}}>
-                            <TouchableOpacity>
+                            {/* <TouchableOpacity onPress={()=>{this.props.navigation.openDrawer()}}>
                                 <Icons name="align-left" size={35}   style={{ color:'orange'   }}/>
-                            </TouchableOpacity>
+                            </TouchableOpacity> */}
                         
                         </View>
                     </View> 
-                    <View style={{alignItems:'center',justifyContent:'center',marginTop:10}}>
+                    <View style={{alignItems:'center',justifyContent:'center',marginTop:30}}>
                        <Text style={{color:'white',fontWeight:'bold',fontSize:22}} >{this.props.route.params.selectedItemValue.Country}</Text>
                     </View>
           
         </View>
         
       <View style={{borderTopEndRadius:30,borderTopLeftRadius:30,marginTop:-30,backgroundColor:'white',marginBottom:10}}>
-     
+           
+ <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{marginTop:30}}>
                 <View style={{flexDirection:'row',marginLeft:10,marginTop:20,alignItems:'center',width:'100%'}}>
                         <View style={{width:'30%',alignItems:'center'}}>
@@ -134,8 +134,9 @@ export default class CountryDetailScreen extends Component{
                         </View>
                 </View> 
           </View>
+           </ScrollView>
         </View>
- </ScrollView>
+
 
       {/* <View style={{alignItems:'center',alignSelf:'flex-end',margin:10}}>
       <TouchableOpacity onPress={()=>Actions.HomeScreen()}>

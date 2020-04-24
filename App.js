@@ -11,15 +11,15 @@ import CountryDetailScreen from './src/screens/CountryDetailScreen'
 export default class App extends Component{
 
     render(){
-        const HomeStack = createStackNavigator();
+        const Stack = createStackNavigator();
         function HomeStackScreen() {
         return (
-            <HomeStack.Navigator>
-               <HomeStack.Screen name="SplashScreen" component={SplashScreen}   options={{ headerShown:false }} />
-                <HomeStack.Screen name="HomeScreen" component={HomeScreen} options={{headerShown:false }} />
-                <HomeStack.Screen name="CountryScreen" component={CountryScreen} options={{headerShown:false }}/>
-                <HomeStack.Screen name="CountryDetailScreen" component={CountryDetailScreen} options={{headerShown:false }}/>
-            </HomeStack.Navigator>
+            <Drawer.Navigator>
+               {/* <Drawer.Screen name="SplashScreen" component={SplashScreen}   options={{ headerShown:false }} /> */}
+                <Drawer.Screen name="Home" component={HomeScreen} options={{headerShown:false }} />
+                <Drawer.Screen name="Country List" component={CountryScreen} options={{headerShown:false }}/>
+                {/* <Drawer.Screen name="CountryDetailScreen" component={CountryDetailScreen} options={{headerShown:false }}/> */}
+            </Drawer.Navigator>
         );
         }
 const Drawer = createDrawerNavigator();
@@ -33,21 +33,22 @@ const Drawer = createDrawerNavigator();
         //        <Scene key={'CountryDetailScreen'} component={CountryDetailScreen} hideNavBar={true}/>
         //     </Scene>
         //  </Router>    
-    //    <NavigationContainer>
-    //     <Stack.Navigator initialRouteName="SplashScreen">
-    //         <Stack.Screen name="SplashScreen" component={SplashScreen}   options={{ headerShown:false }} />
-    //         <Stack.Screen name="HomeScreen" component={HomeScreen} options={{headerShown:false }} />
-    //         <Stack.Screen name="CountryScreen" component={CountryScreen} options={{headerShown:false }}/>
-    //         <Stack.Screen name="CountryDetailScreen" component={CountryDetailScreen} options={{headerShown:false }}/>
-    //     </Stack.Navigator>
-    // </NavigationContainer>
-
-        <NavigationContainer>
-        <Drawer.Navigator initialRouteName="Home">
-            <Drawer.Screen name="Home" component={HomeStackScreen} />
-            {/* <Drawer.Screen name="Settings" component={SettingsStackScreen} /> */}
-        </Drawer.Navigator>
+       <NavigationContainer>
+        <Stack.Navigator initialRouteName="SplashScreen">
+            <Stack.Screen name="SplashScreen" component={SplashScreen}   options={{ headerShown:false }} />
+            <Stack.Screen name="HomeScreen" component={HomeStackScreen} options={{headerShown:false }} />
+            <Stack.Screen name="CountryScreen" component={CountryScreen} options={{headerShown:false }}/>
+            <Stack.Screen name="CountryDetailScreen" component={CountryDetailScreen} options={{headerShown:false }}/>
+        </Stack.Navigator>
     </NavigationContainer>
+
+    //     <NavigationContainer>
+    //     <Drawer.Navigator initialRouteName="Home">
+    //         <Drawer.Screen name="Home" component={HomeStackScreen} />
+    //         <Drawer.Screen name="Country" component={CountryScreen} />
+    //         {/* <Drawer.Screen name="Settings" component={SettingsStackScreen} /> */}
+    //     </Drawer.Navigator>
+    // </NavigationContainer>
 
         )
     }

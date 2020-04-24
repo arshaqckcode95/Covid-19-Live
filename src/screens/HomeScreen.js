@@ -107,9 +107,9 @@ export default class HomeScreen extends Component{
      
         return(
 
-   <View style={{ flex: 1, width:'100%',}}>
+   <View style={{ flex: 1, width:'100%',backgroundColor:'white'}}>
       
- <ScrollView>
+ <ScrollView showsVerticalScrollIndicator={false}>
 
         <View style={{backgroundColor:'#2E4053',width:'100%',height:200}}>
          <View style={{backgroundColor:'#2E4053',width:'20%',alignSelf:'flex-start',}}>
@@ -156,12 +156,39 @@ export default class HomeScreen extends Component{
                             <Text style={{fontSize:18,marginTop:8}}>{this.state.dataSource.TotalRecovered}</Text>
                         </View>
                 </View>
+                  <View style={{flexDirection:'row',marginLeft:10,marginTop:20,alignItems:'center',width:'100%'}}>
+                        <View  style={{width:'30%',alignItems:'center'}}>
+                        <Icon name="user" size={35}   style={{ color:'orange'   }}/>
+                        </View>
+                        <View style={{width:'70%'}}>
+                            <Text  style={{fontSize:18,fontWeight:'bold'}}>New Confirmed</Text>
+                            <Text style={{fontSize:18,marginTop:8}}>{this.state.dataSource.NewConfirmed}</Text>
+                        </View>
+                </View>
+                    <View style={{flexDirection:'row',marginLeft:10,marginTop:20,alignItems:'center',width:'100%'}}>
+                        <View  style={{width:'30%',alignItems:'center'}}>
+                        <Icon name="user" size={35}   style={{ color:'red'   }}/>
+                        </View>
+                        <View style={{width:'70%'}}>
+                            <Text  style={{fontSize:18,fontWeight:'bold'}}>New Death</Text>
+                            <Text style={{fontSize:18,marginTop:8}}>{this.state.dataSource.NewDeaths}</Text>
+                        </View>
+                </View>
+                    <View style={{flexDirection:'row',marginLeft:10,marginTop:20,alignItems:'center',width:'100%'}}>
+                        <View  style={{width:'30%',alignItems:'center'}}>
+                        <Icon name="user" size={35}   style={{ color:'green'   }}/>
+                        </View>
+                        <View style={{width:'70%'}}>
+                            <Text  style={{fontSize:18,fontWeight:'bold'}}>New Recovered</Text>
+                            <Text style={{fontSize:18,marginTop:8}}>{this.state.dataSource.NewRecovered}</Text>
+                        </View>
+                </View>
            </View>
 
         </View>
  </ScrollView>
 
-      <View style={{alignItems:'center',alignSelf:'flex-end',margin:10}}>
+      <View style={{backgroundColor:'white',alignItems:'center',alignSelf:'flex-end',margin:10}}>
       <TouchableOpacity
         //  onPress={()=>Actions.CountryScreen()}
          onPress={() =>this.props.navigation.navigate('CountryScreen')}
