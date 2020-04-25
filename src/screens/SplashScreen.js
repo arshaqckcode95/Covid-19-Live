@@ -1,6 +1,6 @@
 import React,{ Component } from "react";
 import { View,Text,ScrollView,TouchableOpacity,Image } from "react-native";
-// import {Actions} from 'react-native-router-flux';
+import {Actions} from 'react-native-router-flux';
 import AppLogo from '../components/assets/Logo.png'
 import { Card } from "native-base";
 export default class SplashScreen extends Component{
@@ -13,15 +13,11 @@ export default class SplashScreen extends Component{
     FDelayScreen = () => {
         this.timeoutHandle = setTimeout(() => {
      
-        //    Actions.HomeScreen();
-        this.props.navigation.navigate('HomeScreen')
+           Actions.RouterInitialScreen();
+        // this.props.navigation.navigate('HomeScreen')
         }, 3000);
     };
-  static navigationOptions = {
-    header: {
-       visible: false,
-    }
-  }
+
 
     
     render(){

@@ -1,6 +1,6 @@
 import React,{ Component } from "react";
 import { View,Text,ScrollView,TouchableOpacity,BackHandler,Alert } from "react-native";
-// import {Actions} from 'react-native-router-flux';
+import {Actions} from 'react-native-router-flux';
 import { Card } from "native-base";
 import NetInfo from '@react-native-community/netinfo';
 import Loading from '../components/Loading'
@@ -114,7 +114,10 @@ export default class HomeScreen extends Component{
         <View style={{backgroundColor:'#2E4053',width:'100%',height:200}}>
          <View style={{backgroundColor:'#2E4053',width:'20%',alignSelf:'flex-start',}}>
                        <View style={{margin:10}}>
-                            <TouchableOpacity onPress={()=>{this.props.navigation.openDrawer()}}>
+                            <TouchableOpacity 
+                            onPress={()=>{ Actions.drawerOpen();}}
+                            // onPress={()=>{this.props.navigation.openDrawer()}}
+                            >
                                 <Icons name="align-left" size={35}   style={{ color:'orange'   }}/>
                             </TouchableOpacity>
                         
@@ -128,7 +131,7 @@ export default class HomeScreen extends Component{
         
       <View style={{borderTopEndRadius:30,borderTopLeftRadius:30,marginTop:-30,backgroundColor:'white'}}>
      
-        <View style={{marginTop:30}}>
+        <View style={{marginTop:20}}>
           <View style={{flexDirection:'row',marginLeft:10,marginTop:20,alignItems:'center',width:'100%'}}>
                         <View  style={{width:'30%',alignItems:'center'}}>
                         <Icon name="user" size={35}   style={{ color:'orange'   }}/>
@@ -191,8 +194,8 @@ export default class HomeScreen extends Component{
 
       <View style={{backgroundColor:'white',alignItems:'center',alignSelf:'flex-end',margin:10}}>
       <TouchableOpacity
-        //  onPress={()=>Actions.CountryScreen()}
-         onPress={() =>this.props.navigation.navigate('CountryScreen')}
+         onPress={()=>Actions.CountryScreen()}
+        //  onPress={() =>this.props.navigation.navigate('Countries')}
          >
         <View style={{backgroundColor:'blue',borderRadius:50/2,width:50,height:50,alignItems:'center',justifyContent:'center'}}>
           <Icon name="arrow-right" size={17}   style={{ color:'white'   }}/>

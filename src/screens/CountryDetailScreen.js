@@ -1,6 +1,6 @@
 import React,{ Component } from "react";
 import { View,Text,ScrollView,TouchableOpacity,BackHandler,Alert } from "react-native";
-// import {Actions} from 'react-native-router-flux';
+import {Actions} from 'react-native-router-flux';
 import { Card } from "native-base";
 import NetInfo from '@react-native-community/netinfo';
 import Loading from '../components/Loading'
@@ -35,14 +35,14 @@ export default class CountryDetailScreen extends Component{
 
   handleBackButtonClick=()=> {
 
-    // Actions.pop()
-    this.props.navigation.goBack()
+    Actions.pop()
+    // this.props.navigation.navigate('Countries')
       return true
     };
 
    
     render(){
-     console.log('selected item details',this.props.route.params.selectedItemValue)
+     console.log('selected item details',this.props.selectedItemValue)
      if(this.state.isLoading){
         return (<Loading/>);
      }else {
@@ -56,14 +56,14 @@ export default class CountryDetailScreen extends Component{
         <View style={{backgroundColor:'#2E4053',width:'100%',height:200}}>
          <View style={{backgroundColor:'#2E4053',width:'20%',alignSelf:'flex-start',}}>
                        <View style={{margin:10}}>
-                            {/* <TouchableOpacity onPress={()=>{this.props.navigation.openDrawer()}}>
+                            <TouchableOpacity  onPress={()=>{ Actions.drawerOpen();}}>
                                 <Icons name="align-left" size={35}   style={{ color:'orange'   }}/>
-                            </TouchableOpacity> */}
+                            </TouchableOpacity>
                         
                         </View>
                     </View> 
                     <View style={{alignItems:'center',justifyContent:'center',marginTop:30}}>
-                       <Text style={{color:'white',fontWeight:'bold',fontSize:22}} >{this.props.route.params.selectedItemValue.Country}</Text>
+                       <Text style={{color:'white',fontWeight:'bold',fontSize:22}} >{this.props.selectedItemValue.Country}</Text>
                     </View>
           
         </View>
@@ -71,14 +71,14 @@ export default class CountryDetailScreen extends Component{
       <View style={{borderTopEndRadius:30,borderTopLeftRadius:30,marginTop:-30,backgroundColor:'white',marginBottom:10}}>
            
  <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={{marginTop:30}}>
+        <View style={{marginTop:18}}>
                 <View style={{flexDirection:'row',marginLeft:10,marginTop:20,alignItems:'center',width:'100%'}}>
                         <View style={{width:'30%',alignItems:'center'}}>
                           <Icon name="user" size={30}   style={{ color:'orange'   }}/>
                          </View>
                         <View style={{width:'70%'}}>
                             <Text  style={{fontSize:18,fontWeight:'bold'}}>New Confirmed Cases</Text>
-                            <Text style={{fontSize:18,marginTop:7}}>{this.props.route.params.selectedItemValue.NewConfirmed}</Text>
+                            <Text style={{fontSize:18,marginTop:7}}>{this.props.selectedItemValue.NewConfirmed}</Text>
                         </View>
                   </View> 
 
@@ -88,7 +88,7 @@ export default class CountryDetailScreen extends Component{
                          </View>
                         <View style={{width:'70%'}}>
                             <Text  style={{fontSize:18,fontWeight:'bold'}}>New Deaths</Text>
-                            <Text style={{fontSize:18,marginTop:7}}>{this.props.route.params.selectedItemValue.NewDeaths}</Text>
+                            <Text style={{fontSize:18,marginTop:7}}>{this.props.selectedItemValue.NewDeaths}</Text>
                         </View>
                 </View> 
 
@@ -99,7 +99,7 @@ export default class CountryDetailScreen extends Component{
                          </View>
                         <View style={{width:'70%'}}>
                             <Text  style={{fontSize:18,fontWeight:'bold'}}>New Recovered</Text>
-                            <Text style={{fontSize:18,marginTop:7}}>{this.props.route.params.selectedItemValue.NewRecovered}</Text>
+                            <Text style={{fontSize:18,marginTop:7}}>{this.props.selectedItemValue.NewRecovered}</Text>
                         </View>
                 </View> 
 
@@ -111,7 +111,7 @@ export default class CountryDetailScreen extends Component{
                          </View>
                         <View style={{width:'70%'}}>
                             <Text  style={{fontSize:18,fontWeight:'bold'}}>Total Confirmed</Text>
-                            <Text style={{fontSize:18,marginTop:7}}>{this.props.route.params.selectedItemValue.TotalConfirmed}</Text>
+                            <Text style={{fontSize:18,marginTop:7}}>{this.props.selectedItemValue.TotalConfirmed}</Text>
                         </View>
                 </View> 
          <View style={{flexDirection:'row',marginLeft:10,marginTop:20,alignItems:'center',width:'100%'}}>
@@ -120,7 +120,7 @@ export default class CountryDetailScreen extends Component{
                          </View>
                         <View style={{width:'70%'}}>
                             <Text  style={{fontSize:18,fontWeight:'bold'}}>Total Deaths </Text>
-                            <Text style={{fontSize:18,marginTop:7}}>{this.props.route.params.selectedItemValue.TotalDeaths}</Text>
+                            <Text style={{fontSize:18,marginTop:7}}>{this.props.selectedItemValue.TotalDeaths}</Text>
                         </View>
                 </View> 
          
@@ -130,7 +130,7 @@ export default class CountryDetailScreen extends Component{
                          </View>
                         <View style={{width:'70%'}}>
                             <Text  style={{fontSize:18,fontWeight:'bold'}}>Total Recovered </Text>
-                            <Text style={{fontSize:18,marginTop:7}}>{this.props.route.params.selectedItemValue.TotalRecovered}</Text>
+                            <Text style={{fontSize:18,marginTop:7}}>{this.props.selectedItemValue.TotalRecovered}</Text>
                         </View>
                 </View> 
           </View>
