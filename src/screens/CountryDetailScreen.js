@@ -1,6 +1,6 @@
 import React,{ Component } from "react";
 import { View,Text,ScrollView,TouchableOpacity,BackHandler,Alert } from "react-native";
-import {Actions} from 'react-native-router-flux';
+// import {Actions} from 'react-native-router-flux';
 import { Card } from "native-base";
 import NetInfo from '@react-native-community/netinfo';
 import Loading from '../components/Loading'

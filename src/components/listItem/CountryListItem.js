@@ -1,6 +1,6 @@
 import React,{ Component } from "react";
 import { View,Text,ScrollView,TouchableOpacity } from "react-native";
-import {Actions} from 'react-native-router-flux';
+// import {Actions} from 'react-native-router-flux';
 import { Card } from "native-base";
 import Icon from 'react-native-vector-icons/FontAwesome';
 export default class CountryListItem extends Component{
